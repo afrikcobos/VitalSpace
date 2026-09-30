@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Space — Información de Examen Presencial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-header header-profile">
+        <a href="index.html" class="logo-link">
+            <img src="assets/Recurso 1.svg" alt="Vital Space" class="mini-logo">
+        </a>
+        <div class="user-menu">
+            <a href="perfilUsuario.html" class="btn-logout">MI PERFIL</a>
+        </div>
+    </header>
+
+    <main class="section-container">
+
+        <div class="back-bar">
+            <a href="perfil-laboratorio.html" class="btn-logout">← VOLVER AL LABORATORIO</a>
+        </div>
+
+        <section class="booking-card">
+            
+            <div class="booking-doctor-summary">
+                <div class="doctor-avatar" style="font-size: 45px;">🧪</div>
+                <div class="doctor-summary-info">
+                    <h2 class="doctor-name">Perfil 20 Completo (Presencial)</h2>
+                    <p class="doctor-spec">Laboratorio Clínico Meyer</p>
+                    <p class="doctor-office">📍 Las Mercedes, Av. Principal — Caracas</p>
+                </div>
+            </div>
+
+            <div class="doctor-schedule-box" style="text-align: left; padding: 20px; gap: 10px;">
+                <p class="schedule-days">🕒 <strong>Horario de Atención:</strong> Lunes a Viernes de 07:00 AM a 04:00 PM</p>
+                <p class="schedule-hours">📞 <strong>Teléfono / Contacto:</strong> (0212) 999-8877</p>
+                <p class="schedule-days">⚠️ <strong>Indicaciones Previas:</strong> Ayuno estricto de 8 a 12 horas. No consumir alcohol 24h antes.</p>
+                <p class="schedule-hours">💵 <strong>Monto en Sede:</strong> $50.00</p>
+            </div>
+
+            <form action="perfilUsuario.html" method="GET">
+                <input type="hidden" name="servicio_guardado" value="perfil20_presencial">
+                <button type="submit" class="btn-auth btn-submit-booking">GUARDAR EXAMEN EN MI PERFIL 📌</button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#">Soporte WhatsApp</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Vital Space. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

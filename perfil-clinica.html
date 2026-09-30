@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Space — Perfil de Clínica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-header header-profile">
+        <a href="index.html" class="logo-link">
+            <img src="assets/Recurso 1.svg" alt="Vital Space" class="mini-logo">
+        </a>
+        <div class="user-menu">
+            <a href="perfilUsuario.html" class="btn-logout">MI PERFIL</a>
+        </div>
+    </header>
+
+    <main class="section-container">
+
+        <div class="back-bar">
+            <a href="clinicas.html" class="btn-logout">← VOLVER A CLÍNICAS</a>
+        </div>
+
+        <section class="clinic-profile-card">
+            
+            <div class="clinic-hero-image">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800" alt="Foto de la Clínica">
+            </div>
+
+            <div class="clinic-hero-info">
+                <h2 class="clinic-hero-title">CLÍNICA EL ÁVILA</h2>
+                <p class="clinic-hero-sub">📍 Altamira, Av. San Juan Bosco — Caracas</p>
+                <p class="clinic-hero-sub">📞 (0212) 276-1111 | 🚑 Emergencias 24/7</p>
+            </div>
+
+            <div class="clinic-tab-selector">
+                <button type="button" class="tab-btn active" id="btn-offers" onclick="switchTab('offers')">OFERTAS</button>
+                <button type="button" class="tab-btn" id="btn-specialties" onclick="switchTab('specialties')">ESPECIALIDADES</button>
+            </div>
+
+            <div id="tab-offers" class="tab-content">
+                <div class="grid-container">
+                    <div class="grid-card service-card offer-card">
+                        <span class="badge-discount">20% OFF</span>
+                        <div class="card-icon">🧪</div>
+                        <h3 class="card-title">Perfil 20 General</h3>
+                        <span class="card-subtitle">Incluye Hematología, Glucosa, Úrea y Creatinina</span>
+                        <a href="detalle-oferta.html" class="btn-auth btn-card-action">APROVECHAR OFERTA</a>
+                    </div>
+
+                    <div class="grid-card service-card offer-card">
+                        <span class="badge-discount">15% OFF</span>
+                        <div class="card-icon">🫀</div>
+                        <h3 class="card-title">Chequeo Cardiovascular</h3>
+                        <span class="card-subtitle">Consulta + Electrocardiograma de esfuerzo</span>
+                        <a href="detalle-oferta.html" class="btn-auth btn-card-action">APROVECHAR OFERTA</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-specialties" class="tab-content hidden">
+                <div class="grid-container">
+                    
+                    <div class="grid-card service-card">
+                        <div class="card-icon">🩺</div>
+                        <h3 class="card-title">Cardiología</h3>
+                        <span class="card-subtitle">Consultas, ECG y chequeo preventivo</span>
+                        <a href="doctores.html?especialidad=cardiologia" class="btn-auth btn-card-action">VER DOCTORES</a>
+                    </div>
+
+                    <div class="grid-card service-card">
+                        <div class="card-icon">👶</div>
+                        <h3 class="card-title">Pediatría</h3>
+                        <span class="card-subtitle">Control infantil y vacunas</span>
+                        <a href="doctores.html?especialidad=pediatria" class="btn-auth btn-card-action">VER DOCTORES</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="clinic-ranking-box">
+                <h3 class="ranking-title">COMENTARIOS / RANKING</h3>
+                <div class="ranking-stars">
+                    ⭐⭐⭐⭐☆ <span>(4.8 / 5.0 - 124 opiniones)</span>
+                </div>
+                <div class="comment-item">
+                    <p><strong>María G.:</strong> "Excelente atención en el área de emergencias, súper rápido el proceso."</p>
+                </div>
+                <div class="comment-item">
+                    <p><strong>Carlos R.:</strong> "Las instalaciones muy limpias y los médicos muy profesionales."</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#">Soporte WhatsApp</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Vital Space. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabName) {
+            const btnOffers = document.getElementById('btn-offers');
+            const btnSpecialties = document.getElementById('btn-specialties');
+            const tabOffers = document.getElementById('tab-offers');
+            const tabSpecialties = document.getElementById('tab-specialties');
+
+            if (tabName === 'offers') {
+                btnOffers.classList.add('active');
+                btnSpecialties.classList.remove('active');
+                tabOffers.classList.remove('hidden');
+                tabSpecialties.classList.add('hidden');
+            } else {
+                btnSpecialties.classList.add('active');
+                btnOffers.classList.remove('active');
+                tabSpecialties.classList.remove('hidden');
+                tabOffers.classList.add('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>

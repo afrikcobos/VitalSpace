@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Space — Clínicas por Estado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-header header-profile">
+        <a href="index.html" class="logo-link">
+            <img src="assets/Recurso 1.svg" alt="Vital Space" class="mini-logo">
+        </a>
+        <div class="user-menu">
+            <a href="perfilUsuario.html" class="btn-logout">MI PERFIL</a>
+        </div>
+    </header>
+
+    <main class="section-container">
+
+        <section class="search-header">
+            <h2 class="section-title-center">SELECCIONA UN ESTADO</h2>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Buscar estado..." onkeyup="filterItems()">
+            </div>
+        </section>
+
+        <section class="grid-container" id="statesGrid">
+            <div class="grid-card" onclick="selectState('Distrito Capital')">
+                <div class="card-icon">📍</div>
+                <h3 class="card-title">Distrito Capital</h3>
+                <span class="card-subtitle">Caracas</span>
+            </div>
+
+            <div class="grid-card" onclick="selectState('Carabobo')">
+                <div class="card-icon">📍</div>
+                <h3 class="card-title">Carabobo</h3>
+                <span class="card-subtitle">Valencia</span>
+            </div>
+
+            <div class="grid-card" onclick="selectState('Zulia')">
+                <div class="card-icon">📍</div>
+                <h3 class="card-title">Zulia</h3>
+                <span class="card-subtitle">Maracaibo</span>
+            </div>
+
+            <div class="grid-card" onclick="selectState('Lara')">
+                <div class="card-icon">📍</div>
+                <h3 class="card-title">Lara</h3>
+                <span class="card-subtitle">Barquisimeto</span>
+            </div>
+
+            <div class="grid-card" onclick="selectState('Aragua')">
+                <div class="card-icon">📍</div>
+                <h3 class="card-title">Aragua</h3>
+                <span class="card-subtitle">Maracay</span>
+            </div>
+
+            <div class="grid-card" onclick="selectState('Anzoátegui')">
+                <div class="card-icon">📍</div>
+                <h3 class="card-title">Anzoátegui</h3>
+                <span class="card-subtitle">Barcelona / Lechería</span>
+            </div>
+        </section>
+
+        <section class="grid-container hidden" id="clinicsGrid">
+            <div class="back-bar">
+                <button class="btn-logout" onclick="resetToStates()">← VOLVER A ESTADOS</button>
+                <h3 id="selectedStateTitle" class="state-selected-label">Clínicas en Distrito Capital</h3>
+            </div>
+
+            <div class="grid-card clinic-card">
+                <div class="clinic-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500" alt="Clínica El Ávila">
+                </div>
+                <h3 class="card-title">Clínica El Ávila</h3>
+                <span class="card-subtitle">Altamira, Caracas</span>
+                <a href="perfil-clinica.html" class="btn-auth btn-card-action">VER SERVICIOS</a>
+            </div>
+
+            <div class="grid-card clinic-card">
+                <div class="clinic-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=500" alt="Centro Médico de Caracas">
+                </div>
+                <h3 class="card-title">Centro Médico de Caracas</h3>
+                <span class="card-subtitle">San Bernardino, Caracas</span>
+                <a href="perfil-clinica.html" class="btn-auth btn-card-action">VER SERVICIOS</a>
+            </div>
+
+            <div class="grid-card clinic-card">
+                <div class="clinic-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=500" alt="Policlínica Metropolitana">
+                </div>
+                <h3 class="card-title">Policlínica Metropolitana</h3>
+                <span class="card-subtitle">Caurimare, Caracas</span>
+                <a href="perfil-clinica.html" class="btn-auth btn-card-action">VER SERVICIOS</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#">Soporte WhatsApp</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Vital Space. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const clinicsData = {
+            'Distrito Capital': [
+                { name: 'Clínica El Ávila', location: 'Altamira, Caracas', img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500' },
+                { name: 'Centro Médico de Caracas', location: 'San Bernardino, Caracas', img: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=500' },
+                { name: 'Policlínica Metropolitana', location: 'Caurimare, Caracas', img: 'https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=500' }
+            ]
+        };
+
+        function selectState(stateName) {
+            document.getElementById('statesGrid').classList.add('hidden');
+            const clinicsGrid = document.getElementById('clinicsGrid');
+            clinicsGrid.classList.remove('hidden');
+            
+            document.getElementById('selectedStateTitle').innerText = 'Clínicas en ' + stateName;
+            document.querySelector('.section-title-center').innerText = 'CLÍNICAS DISPONIBLES';
+            document.getElementById('searchInput').placeholder = 'Buscar clínica en ' + stateName + '...';
+            document.getElementById('searchInput').value = '';
+
+            const list = clinicsData[stateName] || clinicsData['Distrito Capital'];
+            
+            const backBarHTML = `
+                <div class="back-bar">
+                    <button class="btn-logout" onclick="resetToStates()">← VOLVER A ESTADOS</button>
+                    <h3 id="selectedStateTitle" class="state-selected-label">Clínicas en ${stateName}</h3>
+                </div>
+            `;
+
+            let cardsHTML = '';
+            list.forEach(clinic => {
+                cardsHTML += `
+                    <div class="grid-card clinic-card">
+                        <div class="clinic-img-wrapper">
+                            <img src="${clinic.img}" alt="${clinic.name}">
+                        </div>
+                        <h3 class="card-title">${clinic.name}</h3>
+                        <span class="card-subtitle">${clinic.location}</span>
+                        <a href="perfil-clinica.html" class="btn-auth btn-card-action">VER CLÍNICA</a>
+                    </div>
+                `;
+            });
+
+            clinicsGrid.innerHTML = backBarHTML + cardsHTML;
+            filterItems();
+        }
+
+        function resetToStates() {
+            document.getElementById('clinicsGrid').classList.add('hidden');
+            document.getElementById('statesGrid').classList.remove('hidden');
+            document.querySelector('.section-title-center').innerText = 'SELECCIONA UN ESTADO';
+            document.getElementById('searchInput').placeholder = 'Buscar estado...';
+            document.getElementById('searchInput').value = '';
+            filterItems();
+        }
+
+        function filterItems() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const activeGrid = document.querySelector('.grid-container:not(.hidden)');
+            const cards = activeGrid.querySelectorAll('.grid-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title')?.innerText.toLowerCase() || '';
+                card.style.display = title.includes(input) ? 'flex' : 'none';
+            });
+        }
+    </script>
+
+</body>
+</html>

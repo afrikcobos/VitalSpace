@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Space — Cita a Domicilio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-header header-profile">
+        <a href="index.html" class="logo-link">
+            <img src="assets/Recurso 1.svg" alt="Vital Space" class="mini-logo">
+        </a>
+        <div class="user-menu">
+            <a href="perfilUsuario.html" class="btn-logout">MI PERFIL</a>
+        </div>
+    </header>
+
+    <main class="section-container">
+
+        <div class="back-bar">
+            <a href="perfil-laboratorio.html" class="btn-logout">← VOLVER AL LABORATORIO</a>
+        </div>
+
+        <section class="booking-card">
+            
+            <div class="booking-doctor-summary">
+                <div class="doctor-avatar" style="font-size: 45px;">🚗</div>
+                <div class="doctor-summary-info">
+                    <h2 class="doctor-name">Perfil 20 Completo (A Domicilio)</h2>
+                    <p class="doctor-spec">Laboratorio Clínico Meyer</p>
+                    <p class="doctor-office">📍 Servicio Toma de Muestra en Casa — Caracas</p>
+                </div>
+            </div>
+
+            <form class="booking-form" action="perfilUsuario.html" method="GET">
+                
+                <div class="input-group">
+                    <label>DIRECCIÓN EXACTA DE HABITACIÓN</label>
+                    <input type="text" placeholder="Ej: Av. Principal de Las Mercedes, Res. Los Pinos, Apto 4B" required>
+                </div>
+
+                <div class="booking-step">
+                    <label class="booking-label">SELECCIONA LA FECHA DE LA VISITA</label>
+                    <input type="date" class="booking-date-input" required>
+                </div>
+
+                <div class="booking-step">
+                    <label class="booking-label">SELECCIONA EL HORARIO PREFERIDO</label>
+                    <div class="time-slots-grid">
+                        <button type="button" class="time-slot-btn active">07:00 AM</button>
+                        <button type="button" class="time-slot-btn">08:00 AM</button>
+                        <button type="button" class="time-slot-btn">09:00 AM</button>
+                        <button type="button" class="time-slot-btn">10:00 AM</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>PUNTO DE REFERENCIA / NOTAS</label>
+                    <input type="text" placeholder="Ej: Frente al centro comercial, timbre no funciona">
+                </div>
+
+                <button type="submit" class="btn-auth btn-submit-booking">SOLICITAR MUESTRA A DOMICILIO</button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#">Soporte WhatsApp</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Vital Space. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.time-slot-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.time-slot-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

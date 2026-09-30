@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Space — Perfil de Laboratorio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-header header-profile">
+        <a href="index.html" class="logo-link">
+            <img src="assets/Recurso 1.svg" alt="Vital Space" class="mini-logo">
+        </a>
+        <div class="user-menu">
+            <a href="perfilUsuario.html" class="btn-logout">MI PERFIL</a>
+        </div>
+    </header>
+
+    <main class="section-container">
+
+        <div class="back-bar">
+            <a href="laboratorios.html" class="btn-logout">← VOLVER A LABORATORIOS</a>
+        </div>
+
+        <section class="clinic-profile-card">
+            
+            <div class="clinic-hero-image">
+                <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800" alt="Foto del Laboratorio">
+            </div>
+
+            <div class="clinic-hero-info">
+                <h2 class="clinic-hero-title">LABORATORIO CLÍNICO MEYER</h2>
+                <p class="clinic-hero-sub">📍 Las Mercedes, Av. Principal — Caracas</p>
+                <p class="clinic-hero-sub">📞 (0212) 999-8877 | 🕒 Atención 07:00 AM - 04:00 PM</p>
+            </div>
+
+            <div class="clinic-tab-selector">
+                <button type="button" class="tab-btn active" id="btn-services" onclick="switchLabTab('services')">SERVICIOS DE LAB</button>
+                <button type="button" class="tab-btn" id="btn-offers" onclick="switchLabTab('offers')">OFERTAS DE LAB</button>
+            </div>
+
+            <div id="tab-services" class="tab-content">
+                <div class="grid-container">
+                    
+                    <div class="grid-card service-card">
+                        <div class="card-icon">🧪</div>
+                        <h3 class="card-title">Perfil 20 Completo</h3>
+                        <span class="card-subtitle">Hematología, glucosa, urea, creatinina, perfil lipídico</span>
+                        
+                        <div class="doctor-schedule-box">
+                            <p class="schedule-hours">Monto: <strong>$50.00</strong></p>
+                        </div>
+
+                        <div class="modality-actions">
+                            <a href="agendar-laboratorio.html" class="btn-auth btn-card-action btn-modality">PRESENCIAL</a>
+                            <a href="agendar-domicilio.html" class="btn-auth btn-card-action btn-modality btn-domicilio">A DOMICILIO</a>
+                        </div>
+                    </div>
+
+                    <div class="grid-card service-card">
+                        <div class="card-icon">🩸</div>
+                        <h3 class="card-title">Perfil Tiroideo</h3>
+                        <span class="card-subtitle">T3, T4 Libre y TSH ultra sensible</span>
+                        
+                        <div class="doctor-schedule-box">
+                            <p class="schedule-hours">Monto: <strong>$35.00</strong></p>
+                        </div>
+
+                        <div class="modality-actions">
+                            <a href="agendar-laboratorio.html" class="btn-auth btn-card-action btn-modality">PRESENCIAL</a>
+                            <a href="agendar-domicilio.html" class="btn-auth btn-card-action btn-modality btn-domicilio">A DOMICILIO</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="tab-offers" class="tab-content hidden">
+                <div class="grid-container">
+                    
+                    <div class="grid-card service-card offer-card">
+                        <span class="badge-discount">25% OFF</span>
+                        <div class="card-icon">🎁</div>
+                        <h3 class="card-title">Combo Chequeo Anual</h3>
+                        <span class="card-subtitle">Perfil 20 + Examen de Orina + Heces</span>
+                        
+                        <div class="doctor-schedule-box">
+                            <p class="schedule-hours">Monto: <strong>$40.00</strong> <span style="text-decoration:line-through; color:#999; font-size:10px;">$55.00</span></p>
+                        </div>
+
+                        <div class="modality-actions">
+                            <a href="agendar-laboratorio.html" class="btn-auth btn-card-action btn-modality">PRESENCIAL</a>
+                            <a href="agendar-domicilio.html" class="btn-auth btn-card-action btn-modality btn-domicilio">A DOMICILIO</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="clinic-ranking-box">
+                <h3 class="ranking-title">OPINIONES DEL LABORATORIO</h3>
+                <div class="ranking-stars">
+                    ⭐⭐⭐⭐⭐ <span>(4.9 / 5.0 - 86 valoraciones)</span>
+                </div>
+                <div class="comment-item">
+                    <p><strong>Andrea P.:</strong> "El servicio a domicilio puntualísimo y súper delicados al tomar la muestra."</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#">Soporte WhatsApp</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Vital Space. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchLabTab(tabName) {
+            const btnServices = document.getElementById('btn-services');
+            const btnOffers = document.getElementById('btn-offers');
+            const tabServices = document.getElementById('tab-services');
+            const tabOffers = document.getElementById('tab-offers');
+
+            if (tabName === 'services') {
+                btnServices.classList.add('active');
+                btnOffers.classList.remove('active');
+                tabServices.classList.remove('hidden');
+                tabOffers.classList.add('hidden');
+            } else {
+                btnOffers.classList.add('active');
+                btnServices.classList.remove('active');
+                tabOffers.classList.remove('hidden');
+                tabServices.classList.add('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>

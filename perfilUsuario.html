@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Space — Mi Perfil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-header header-profile">
+        <a href="index.html" class="logo-link">
+            <img src="assets/Recurso 1.svg" alt="Vital Space" class="mini-logo">
+        </a>
+
+        <div class="user-menu">
+            <span class="user-name">Hola, <strong>Carlos Pérez</strong></span>
+            <a href="index.html" class="btn-auth btn-logout">CERRAR SESIÓN</a>
+        </div>
+    </header>
+
+    <main class="profile-container">
+
+        <section class="profile-card">
+            <div class="profile-avatar-wrapper">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400" alt="Foto de perfil" class="profile-avatar">
+            </div>
+
+            <div class="profile-info">
+                <h2 class="profile-name">Carlos Eduardo Pérez</h2>
+                <p class="profile-email">carlos.perez@email.com</p>
+                <div class="profile-tags">
+                    <span class="tag-pill">📍 Caracas</span>
+                    <span class="tag-pill">📱 +58 412 1234567</span>
+                </div>
+            </div>
+            
+            <button class="btn-edit-profile">EDITAR PERFIL</button>
+        </section>
+
+        <section class="appointments-section">
+            <h3 class="section-title">MIS CITAS Y CONSULTAS</h3>
+
+            <div class="appointments-list">
+                <div class="appointment-card">
+                    <div class="appt-status status-confirmed">Confirmada</div>
+                    <div class="appt-details">
+                        <h4>Clínica El Ávila — Cardiología</h4>
+                        <p class="appt-doctor">Dr. Alejandro Mendoza</p>
+                        <p class="appt-date">📅 Jueves, 15 de Octubre — 10:00 AM</p>
+                    </div>
+                    <button class="btn-action">Ver Detalle</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="appointments-section">
+            <h3 class="section-title">MIS SERVICIOS</h3>
+
+            <div class="appointments-list">
+                <div class="appointment-card">
+                    <div class="appt-status status-pending">Pendiente de Pago</div>
+                    <div class="appt-details">
+                        <h4>🧪 Perfil 20 General <span class="badge-discount" style="position:static; margin-left:8px;">20% OFF</span></h4>
+                        <p class="appt-doctor">Clínica El Ávila — Laboratorio Central</p>
+                        <p class="appt-date">Monto a pagar: <strong>$40.00</strong> <span style="text-decoration:line-through; color:#999; font-size:11px;">$50.00</span></p>
+                    </div>
+                    <button class="btn-action" style="background-color: var(--vs-yellow); border-color: var(--vs-yellow);">PAGAR AHORA 💳</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-services">
+            <h3 class="section-title">AGENDAR NUEVA ATENCIÓN</h3>
+            
+            <div class="categories-flex categories-small">
+                <a href="clinicas.html" class="category-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500" alt="Clínicas">
+                    </div>
+                    <span>CLÍNICAS</span>
+                </a>
+
+                <a href="laboratorios.html" class="category-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=500" alt="Laboratorio">
+                    </div>
+                    <span>LABORATORIO</span>
+                </a>
+
+                <a href="especialidades.html" class="category-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500" alt="Especialidad">
+                    </div>
+                    <span>ESPECIALIDAD</span>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="img-wrapper">
+                        <img src="assets/seguro.jpeg" alt="Seguros">
+                    </div>
+                    <span>SEGUROS</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#">Soporte WhatsApp</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Vital Space. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

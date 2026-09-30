@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Space — Especialidades Médicas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-header header-profile">
+        <a href="index.html" class="logo-link">
+            <img src="assets/Recurso 1.svg" alt="Vital Space" class="mini-logo">
+        </a>
+        <div class="user-menu">
+            <a href="perfilUsuario.html" class="btn-logout">MI PERFIL</a>
+        </div>
+    </header>
+
+    <main class="section-container">
+
+        <section class="search-header">
+            <h2 class="section-title-center">SELECCIONA UNA ESPECIALIDAD MÉDICA</h2>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="specSearchInput" placeholder="Buscar especialidad (ej. Cardiología, Pediatría)..." onkeyup="filterSpecs()">
+            </div>
+        </section>
+
+        <section class="grid-container" id="specsGrid">
+            <div class="back-bar">
+                <a href="index.html" class="btn-logout">← VOLVER AL INICIO</a>
+                <span class="state-selected-label">Especialidades Disponibles</span>
+            </div>
+
+            <div class="grid-card clinic-card">
+                <div class="card-icon" style="font-size: 40px; margin-bottom: 15px;">🫀</div>
+                <h3 class="card-title">Cardiología</h3>
+                <span class="card-subtitle">Atención cardiovascular, electrocardiogramas y ecocardiogramas.</span>
+                <a href="especialidad-clinicas.html" class="btn-auth btn-card-action">VER CLÍNICAS DISPONIBLES</a>
+            </div>
+
+            <div class="grid-card clinic-card">
+                <div class="card-icon" style="font-size: 40px; margin-bottom: 15px;">👶</div>
+                <h3 class="card-title">Pediatría</h3>
+                <span class="card-subtitle">Cuidado integral de bebés, niños y adolescentes.</span>
+                <a href="especialidad-clinicas.html" class="btn-auth btn-card-action">VER CLÍNICAS DISPONIBLES</a>
+            </div>
+
+            <div class="grid-card clinic-card">
+                <div class="card-icon" style="font-size: 40px; margin-bottom: 15px;">🩺</div>
+                <h3 class="card-title">Dermatología</h3>
+                <span class="card-subtitle">Tratamientos para la piel, cabello y uñas.</span>
+                <a href="especialidad-clinicas.html" class="btn-auth btn-card-action">VER CLÍNICAS DISPONIBLES</a>
+            </div>
+
+            <div class="grid-card clinic-card">
+                <div class="card-icon" style="font-size: 40px; margin-bottom: 15px;">🦷</div>
+                <h3 class="card-title">Odontología</h3>
+                <span class="card-subtitle">Salud bucal, limpieza, ortodoncia y prótesis.</span>
+                <a href="especialidad-clinicas.html" class="btn-auth btn-card-action">VER CLÍNICAS DISPONIBLES</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#">Soporte WhatsApp</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Vital Space. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterSpecs() {
+            const input = document.getElementById('specSearchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('#specsGrid .grid-card');
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(input) ? 'flex' : 'none';
+            });
+        }
+    </script>
+
+</body>
+</html>

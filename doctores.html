@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Space — Doctores y Horarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-header header-profile">
+        <a href="index.html" class="logo-link">
+            <img src="assets/Recurso 1.svg" alt="Vital Space" class="mini-logo">
+        </a>
+        <div class="user-menu">
+            <a href="perfilUsuario.html" class="btn-logout">MI PERFIL</a>
+        </div>
+    </header>
+
+    <main class="section-container">
+
+        <section class="search-header">
+            <h2 class="section-title-center">DOCTORES DISPONIBLES — CARDIOLOGÍA</h2>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="doctorSearchInput" placeholder="Buscar por nombre del doctor..." onkeyup="filterDoctors()">
+            </div>
+        </section>
+
+        <section class="grid-container">
+            
+            <div class="back-bar">
+                <a href="perfil-clinica.html" class="btn-logout">← VOLVER A CLÍNICA</a>
+                <span class="state-selected-label">Especialistas en Sede</span>
+            </div>
+
+            <div class="grid-card doctor-card">
+                <div class="card-icon" style="font-size: 42px; margin-bottom: 8px;">👨‍⚕️</div>
+                <h3 class="card-title">Dr. Roberto Mendoza</h3>
+                <span class="card-subtitle">Cardiólogo Intensivista</span>
+                
+                <div class="doctor-schedule-box">
+                    <p class="schedule-days"><strong>Lunes, Miércoles y Viernes</strong></p>
+                    <p class="schedule-hours">08:00 AM — 01:00 PM</p>
+                    <p class="schedule-location">Consultorio 304</p>
+                </div>
+
+                <a href="perfilUsuario.html?cita=confirmada" class="btn-auth btn-card-action">AGENDAR CITA 🗓️</a>
+            </div>
+
+            <div class="grid-card doctor-card">
+                <div class="card-icon" style="font-size: 42px; margin-bottom: 8px;">👩‍⚕️</div>
+                <h3 class="card-title">Dra. Elena Alarcón</h3>
+                <span class="card-subtitle">Ecocardiografía e Hipertensión</span>
+                
+                <div class="doctor-schedule-box">
+                    <p class="schedule-days"><strong>Martes y Jueves</strong></p>
+                    <p class="schedule-hours">02:00 PM — 06:00 PM</p>
+                    <p class="schedule-location">Consultorio 308</p>
+                </div>
+
+                <a href="perfilUsuario.html?cita=confirmada" class="btn-auth btn-card-action">AGENDAR CITA 🗓️️</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#">Soporte WhatsApp</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Vital Space. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterDoctors() {
+            const input = document.getElementById('doctorSearchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.doctor-card');
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(input) ? 'flex' : 'none';
+            });
+        }
+    </script>
+
+</body>
+</html>
