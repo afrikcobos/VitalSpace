@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vital Space — Detalle de Oferta</title>
+    <title>Vital Space — Agendar Cita Médica</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,41 +20,50 @@
     <main class="section-container">
 
         <div class="back-bar">
-            <a href="perfil-clinica.html" class="btn-logout">← VOLVER A PERFIL DE CLÍNICA</a>
+            <a href="doctores.html" class="btn-logout">← VOLVER A DOCTORES</a>
         </div>
 
-        <section class="offer-detail-card">
-            <div class="offer-detail-header">
-                <span class="badge-discount-big">20% OFF</span>
-                <div class="card-icon">
-                    <svg class="icon-card" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+        <section class="booking-card">
+            
+            <div class="booking-doctor-summary">
+                <div class="doctor-avatar">
+                    <svg class="icon-card" viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-14 0v1h2v-1a5 5 0 0 1 10 0v1z"/></svg>
                 </div>
-                <h2 class="offer-title">Perfil 20 General</h2>
-                <p class="offer-clinic">
-                    <svg class="icon-inline" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 2.5-2.5 2.5 2.5 0 0 1-2.5 2.5z"/></svg>
-                    Clínica El Ávila — Laboratorio Central
-                </p>
-            </div>
-
-            <div class="offer-body">
-                <h3 class="offer-subtitle">¿QUÉ INCLUYE ESTA PROMOCIÓN?</h3>
-                <ul class="offer-list">
-                    <li>✔️ Hematología Completa</li>
-                    <li>✔️ Glicemia e Insulina en Ayunas</li>
-                    <li>✔️ Úrea, Creatinina y Ácido Úrico</li>
-                    <li>✔️ Perfil Lipídico (Colesterol HDL, LDL, Triglicéridos)</li>
-                    <li>✔️ Examen General de Orina y Heces</li>
-                </ul>
-
-                <div class="price-box">
-                    <span class="price-old">$20.00</span>
-                    <span class="price-new">$10.00</span>
+                <div class="doctor-summary-info">
+                    <h2 class="doctor-name">Dr. Roberto Mendoza</h2>
+                    <p class="doctor-spec">Cardiólogo Intensivista</p>
+                    <p class="doctor-office">
+                        <svg class="icon-inline" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 2.5-2.5 2.5 2.5 0 0 1-2.5 2.5z"/></svg>
+                        Clínica El Ávila — Consultorio 304
+                    </p>
                 </div>
             </div>
 
-            <div class="offer-actions">
-                <a href="perfilUsuario.html?oferta=perfil20" class="btn-auth btn-submit-booking">AGREGAR A MI PERFIL</a>
-            </div>
+            <form class="booking-form" action="perfilUsuario.html" method="GET">
+                
+                <div class="input-group">
+                    <label class="booking-label">SELECCIONA LA FECHA DE TU CITA</label>
+                    <input type="date" class="booking-date-input" required>
+                </div>
+
+                <div class="input-group">
+                    <label class="booking-label">SELECCIONA EL HORARIO DISPONIBLE</label>
+                    <div class="time-slots-grid">
+                        <button type="button" class="time-slot-btn active" onclick="selectSlot(this)">08:30 AM</button>
+                        <button type="button" class="time-slot-btn" onclick="selectSlot(this)">09:15 AM</button>
+                        <button type="button" class="time-slot-btn" onclick="selectSlot(this)">10:00 AM</button>
+                        <button type="button" class="time-slot-btn" onclick="selectSlot(this)">11:30 AM</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="booking-label">MOTIVO DE LA CONSULTA (OPCIONAL)</label>
+                    <input type="text" placeholder="Ej: Chequeo de rutina, hipertensión, evaluación preoperatoria">
+                </div>
+
+                <button type="submit" class="btn-auth btn-submit-booking">CONFIRMAR Y AGENDAR CITA</button>
+            </form>
+
         </section>
 
     </main>
@@ -84,6 +93,14 @@
             </svg>
         </a>
     </div>
+
+    <script>
+        function selectSlot(btn) {
+            const buttons = document.querySelectorAll('.time-slot-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
