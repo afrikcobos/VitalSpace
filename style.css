@@ -2,11 +2,11 @@
 
 :root {
     --vs-blue: #bbe2f8; 
-    --vs-yellow: #f4e9dc;       
+    --vs-yellow: #f2caad;       
     --vs-green: #aed9b8;        
     --vs-dark: #2b3674;          
     
-    --vs-yellow-glass: --vs-yellow-glass: rgba(244, 233, 220, 0.95);;
+    --vs-yellow-glass: --vs-yellow-glass: rgba(242, 202, 173, 0.65);
     --radius-pill: 999px;
 
   
