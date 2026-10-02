@@ -1628,18 +1628,18 @@ small, .subtext {
    ========================================== */
 .offer-detail-card {
     width: 100%;
-    max-width: 550px !important;
+    max-width: 580px !important;
     background-color: #ffffff !important;
     border: 1px solid var(--vs-blue) !important;
     border-radius: 30px !important;
-    padding: 40px !important;
+    padding: 45px 40px !important;
     box-shadow: var(--shadow-dark) !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    gap: 20px !important;
-    margin: 30px auto !important;
+    gap: 22px !important;
+    margin: 40px auto !important;
 }
 
 .offer-detail-card .badge-discount,
@@ -1648,17 +1648,17 @@ small, .subtext {
     color: var(--vs-dark) !important;
     font-size: 11px !important;
     font-weight: 900 !important;
-    padding: 6px 16px !important;
+    padding: 6px 18px !important;
     border-radius: var(--radius-pill) !important;
     text-transform: uppercase !important;
 }
 
 .offer-detail-card h2,
 .offer-detail-card .card-title {
-    font-size: 24px !important;
+    font-size: 26px !important;
     font-weight: 900 !important;
     color: var(--vs-dark) !important;
-    margin-top: 10px !important;
+    margin: 5px 0 !important;
 }
 
 .offer-detail-card .location-sub {
@@ -1668,51 +1668,54 @@ small, .subtext {
 }
 
 .offer-detail-card h3 {
-    font-size: 14px !important;
+    font-size: 13px !important;
     font-weight: 900 !important;
     letter-spacing: 1.5px !important;
     color: var(--vs-dark) !important;
     text-transform: uppercase !important;
-    margin-top: 15px !important;
+    margin-top: 10px !important;
 }
 
 .offer-detail-card ul {
     list-style: none !important;
     padding: 0 !important;
-    margin: 10px 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
+    margin: 15px 0 !important;
+    display: inline-block !important;
     text-align: left !important;
-    width: 100% !important;
-    max-width: 400px !important;
 }
 
 .offer-detail-card ul li {
     font-size: 14px !important;
     color: #222222 !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
+    padding: 6px 0 !important;
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 10px !important;
 }
 
-.offer-detail-card .price-block {
+.offer-detail-card .price-block,
+.offer-detail-card div:has(> .price-strikethrough) {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 15px !important;
-    margin: 15px 0 !important;
+    gap: 12px !important;
+    margin: 10px 0 !important;
 }
 
-.offer-detail-card .price-strikethrough {
+.offer-detail-card .price-strikethrough,
+.offer-detail-card span:nth-last-child(2) {
+    background: transparent !important;
     text-decoration: line-through !important;
-    color: #999999 !important;
-    font-size: 15px !important;
+    color: #888888 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    padding: 0 !important;
 }
 
-.offer-detail-card .final-price {
-    font-size: 26px !important;
+.offer-detail-card .final-price,
+.offer-detail-card span:last-of-type {
+    font-size: 28px !important;
     font-weight: 900 !important;
     color: var(--vs-dark) !important;
 }
@@ -1720,10 +1723,12 @@ small, .subtext {
 .offer-detail-card .btn-submit,
 .offer-detail-card .btn-card-action,
 .offer-detail-card button,
-.offer-detail-card a.btn-action {
+.offer-detail-card a.btn-action,
+.offer-detail-card a[href*="perfil"] {
+    display: inline-block !important;
     width: 100% !important;
-    max-width: 350px !important;
-    padding: 14px 28px !important;
+    max-width: 320px !important;
+    padding: 14px 24px !important;
     background-color: var(--vs-blue) !important;
     border: 2px solid transparent !important;
     color: var(--vs-dark) !important;
@@ -1733,13 +1738,16 @@ small, .subtext {
     border-radius: var(--radius-pill) !important;
     cursor: pointer !important;
     text-decoration: none !important;
+    text-align: center !important;
     transition: all 0.25s ease !important;
+    box-shadow: var(--shadow-dark) !important;
 }
 
 .offer-detail-card .btn-submit:hover,
 .offer-detail-card .btn-card-action:hover,
 .offer-detail-card button:hover,
-.offer-detail-card a.btn-action:hover {
+.offer-detail-card a.btn-action:hover,
+.offer-detail-card a[href*="perfil"]:hover {
     background-color: #ffffff !important;
     border-color: var(--vs-dark) !important;
     box-shadow: var(--shadow-dark-hover) !important;
